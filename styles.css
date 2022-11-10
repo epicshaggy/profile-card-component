@@ -1,0 +1,136 @@
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --dark-blue: hsl(229, 23%, 23%);
+  --dark-gray-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+html,
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  background-color: var(--dark-cyan);
+}
+
+body:before,
+body:after {
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  background-size: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+body:before {
+  top: 0;
+  left: 0;
+  background: url("../images/bg-pattern-top.svg") no-repeat bottom right;
+}
+
+body:after {
+  top: 100%;
+  left: 100%;
+  background: url("../images/bg-pattern-bottom.svg") no-repeat top left;
+}
+
+.component-wrapper {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-component {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.profile-cover {
+  position: relative;
+  height: 125px;
+  background: url("images/bg-pattern-card.svg");
+  background-position: center;
+}
+
+.profile-cover::before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  background: url("images/image-victor.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: solid 6px white;
+  border-radius: 100%;
+  width: 96px;
+  height: 96px;
+  top: 100%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.profile-label {
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.profile-label .row {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.profile-label .row .name {
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.profile-label .row .name,
+.profile-label .row .age {
+  font-size: 1.2rem;
+}
+
+.profile-label .row .age,
+.profile-label .row.location {
+  color: var(--dark-gray-blue);
+}
+
+.stats {
+  padding: 2rem;
+  border-top: solid 0.1px;
+  border-color: var(--dark-gray);
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stats .stat .number {
+  font-weight: 700;
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+}
+
+.stats .stat .label {
+  color: var(--dark-gray-blue);
+  font-size: 0.8rem;
+}
